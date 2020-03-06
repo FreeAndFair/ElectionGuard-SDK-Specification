@@ -6,12 +6,12 @@
   "type": "object",
   "properties": {
     "public_key": {
-      "description": "The one-time public key `a = gʳ`, where `r` is the randomly generated one-time public key.",
+      "description": "A commitment to the nonce `α = gᴿ`, where `R` is the random nonce and `g` is the generator",
       "type": "integer",
       "minimum": 0
     },
     "ciphertext": {
-      "description": "The encoding `b = gᵐ hʳ`, where `m` is the cleartext and `h` is the recipient public key being used for encryption.",
+      "description": "The encoding `β = gᴹ · Kᴿ`, where `M` is the plaintext and `K` is the recipient public key being used for encryption.",
       "type": "integer",
       "minimum": 0
     }

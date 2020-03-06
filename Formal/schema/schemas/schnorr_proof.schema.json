@@ -2,27 +2,27 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "schnorr_proof.schema.json",
   "title": "Schnorr Proof",
-  "description": "A non-interactive zero-knowledge proof of knowledge of a private key `s` corresponding to a public key `h`.",
+  "description": "A non-interactive zero-knowledge proof of knowledge of a private key `a` corresponding to a public key `K`.",
   "type": "object",
   "properties": {
-    "committment": {
-      "description": "The one-use public key `k = gʳ` generated from the random one-use private key `r`. This acts as a committment to `r`.",
+    "commitment": {
+      "description": "The one-use public key `hᵢ,ⱼ = gʳ` generated from the random value `r`. This acts as a commitment to `r`.",
       "type": "integer",
       "minimum": 0
     },
     "challenge": {
-      "description": "The challenge `c` that is produced by hashing relevent parameters, including the original public key `h` and the one-time public key `k`.",
+      "description": "The challenge `c` that is produced by hashing relevant parameters, including the original public key `h` and `h`.",
       "type": "integer",
       "minimum": 0
     },
     "response": {
-      "description": "The response `u = r + c s mod (p - 1)` to the challenge, where `r` is the one-time private key corresponding to the one-time public key `k`, and `s` is the private-key corresponding to the original public key `h`.",
+      "description": "The response `u = R + c a mod q` to the challenge, where `R` is the random value corresponding to `h`, and `a` is the private-key corresponding to the original public key `K`.",
       "type": "integer",
       "minimum": 0
     }
   },
   "required": [
-    "committment",
+    "commitment",
     "challenge",
     "response"
   ]

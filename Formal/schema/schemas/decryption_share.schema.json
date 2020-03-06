@@ -2,11 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "decryption_share.schema.json",
   "title": "DecryptionShare",
-  "description": "A single trustee's share of a decryption of some encrypted message `(a, b)`. The encrypted message can be an encrypted tally or an encrypted ballot.",
+  "description": "A single trustee's share of a decryption of some encrypted message `(A, B)`. The encrypted message can be an encrypted tally or an encrypted ballot, in the spec (A,B) denotes the tally.",
   "type": "object",
   "properties": {
     "share": {
-      "description": "The share of the decrypted message `M_i`.",
+      "description": "The share of the decrypted message `Mᵢ`.",
       "type": "integer",
       "minimum": 0
     },
@@ -41,7 +41,7 @@
           "type": "integer"
         },
         "lagrange_coefficient": {
-          "description": "The LaGrange coefficient `w_{i,j}` used to compute the decryption share from the fragments.",
+          "description": "The LaGrange coefficient `w_{l}` used to compute the decryption share from the fragments.",
           "type": "integer"
         },
         "proof": {
